@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Actor&family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Actor&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+   font-family: "Kantumruy Pro", sans-serif;
+   font-weight: 400;
+}
+
+html {
+   width: 100%;
+   overflow-y: scroll;
+}
+
+body {
+   width: 95%;
+   overflow: hidden;
+   background-color: #0B3D91;
+}
+
+.container{
+    padding-top: 30px;
+   flex-direction: column;
+   color: white;
+}
+
+#square-img {
+   flex: 0 0 30%;
+   max-width: 200px;
+   height: auto;
+   object-fit: cover;
+}
+
+.header {
+   font-size: 25px;
+   width: 100%;
+   margin-bottom: 18px;
+   font-weight: bold;
+}
+
+.subtext {
+   margin-top: 4px;
+   margin-bottom: 2px;
+   list-style-type: none;
+}
+
+.vcard {
+   flex: 1;
+   padding: 1rem;
+   background: white;
+   color: #000;
+}
+
+.vcard .fn {
+   font-size: 1.2rem;
+   font-weight: bold;
+   color: #333;
+}
+
+.vcard .adr {
+   margin-top: 0.5rem;
+}
+
+.vcard .tel, .vcard .email {
+   display: block;
+   margin-top: 0.5rem;
+}
+
+.contact {
+   display: flex;
+   align-items: center;
+   gap: 50px;
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 10px;
+}
+
+.intro, .education, .experience, .skills {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 10px;
+}
+
+.school {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 20px;
+   font-weight: bold;
+}
+
+.school .url {
+   color: white;
+   font-weight: bold;
+}
+
+.school .location {
+   font-weight: bold;
+   font-style: italic;
+}
+
+.school .date {
+   font-weight: bold;
+   font-style: italic;
+}
+
+.job-container {
+   position: relative;
+   padding-left: 18px;
+}
+
+.job-container::before {
+   content: '';
+   position: absolute;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   width: 1px;
+   background-color: white;
+}
+
+.company {
+   margin-top: 20px;
+   font-weight: bold;
+   display: flex; 
+   justify-content: space-between; 
+   align-items: center;
+}
+
+.company .url {
+   color: white;
+   font-weight: bold;
+}
+
+.company span, .company i {
+   font-weight: inherit;
+}
+
+.job-title {
+   font-style: italic;
+}
+
+.description {
+   margin-top: 7px;
+}
+
+.location {
+   font-weight: normal;
+}
+
+.skills .subtext {
+   list-style-type: disc;
+}
