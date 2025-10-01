@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lab 3 Weather App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="top-bar">
+        Location: 
+    </div>
+
+    <div class="current-weather">
+        <h2>67°</h2>
+        <p>Sunny - Feels like 60°</p>
+        <p>High: 75° - Low: 45°</p>
+    </div>
+
+    <div class="hourly-weather">
+        <h3>Hourly Forecase</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Temp</th>
+                    <th>Precipitation</th>
+                    <th>Clouds</th>
+                    <th>Wind</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>7 PM</td><td>64°</td><td>0%</td><td>2%</td><td>9 mph</td></tr>
+                <tr><td>8 PM</td><td>61°</td><td>0%</td><td>5%</td><td>8 mph</td></tr>
+                <tr><td>9 PM</td><td>58°</td><td>0%</td><td>6%</td><td>7 mph</td></tr>
+                <tr><td>10 PM</td><td>55°</td><td>0%</td><td>8%</td><td>8 mph</td></tr>
+                <tr><td>11 PM</td><td>54°</td><td>0%</td><td>7%</td><td>9 mph</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="columns">
+        <div class="daily-weather">
+            <h3>Daily Forecast</h3>
+            <table>
+                <tbody>
+                    <tr><td>Today</td><td>75° / 42°</td></tr>
+                    <tr><td>Wed</td><td>63° / 40°</td></tr>
+                    <tr><td>Thu</td><td>65° / 43°</td></tr>
+                    <tr><td>Fri</td><td>72° / 47°</td></tr>
+                    <tr><td>Sat</td><td>79° / 52°</td></tr>
+                    <tr><td>Sun</td><td>83° / 57°</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="alerts">
+            <h3>Severe Weather Alerts</h3>
+            <!-- <p>No active alerts.</p> -->
+        </div>
+    </div>
 </body>
 </html>
