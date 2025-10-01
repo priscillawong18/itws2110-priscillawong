@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+body {
+    background-color: #efefef;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Top bar */
+.top-bar {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Current weather */
+.current-weather {
+    width: 100%;
+    padding: 20px;
+    background: white;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.current-weather h2 {
+    margin: 0;
+    font-size: 40px;
+}
+
+/* Hourly weather */
+.hourly-weather {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+
+.hourly-weather table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.hourly-weather th, .hourly-weather td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.hourly-weather th {
+    background-color: #f7f7f7;
+}
+
+/* Columns (daily + alerts) */
+.columns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+/* Daily weather */
+.daily-weather, .alerts {
+    flex: 0 0 45%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+
+.daily-weather table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.daily-weather td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alerts box */
+.alerts p {
+    margin-top: 10px;
+    font-style: italic;
+}
