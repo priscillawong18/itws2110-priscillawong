@@ -4,7 +4,7 @@ const country = "US";
 
 const currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=imperial`;
 const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${apiKey}&units=imperial`;
-const alertsURL = "https://api.weather.gov/alerts/active?point=42.73,-73.66";
+const alertsURL = "https://api.weather.gov/alerts/active?point=42.73,-73.69";
 
 // Make an AJAX GET request
 function getJSON(url, callback) {
@@ -57,8 +57,8 @@ getJSON(forecastURL, function (data) {
         daily[day].low = Math.min(daily[day].low, item.main.temp_min);
     });
 
-    // Show first 5 days
-    Object.keys(daily).slice(0, 5).forEach(day => {
+    // Show first 6 days
+    Object.keys(daily).slice(0, 6).forEach(day => {
         const row = `<tr><td>${day}</td><td>${Math.round(daily[day].high)}° / ${Math.round(daily[day].low)}°</td></tr>`;
         dailyTable.innerHTML += row;
     });
