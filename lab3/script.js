@@ -4,14 +4,15 @@ const country = "US";
 
 const currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=imperial`;
 const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${apiKey}&units=imperial`;
+const alertsURL = "https://api.weather.gov/alerts/active?point=42.73,-73.66";
 
 // Make an AJAX GET request
 function getJSON(url, callback) {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-        const jsonObj = JSON.parse(this.responseText);
-        callback(jsonObj);
+            const jsonObj = JSON.parse(this.responseText);
+            callback(jsonObj);
         }
     };
     xhttp.open("GET", url, true);
@@ -22,7 +23,7 @@ function getJSON(url, callback) {
 getJSON(currentURL, function (data) {
     document.getElementById("location").textContent = `${data.name}, ${data.sys.country}`;
     document.getElementById("temperature").textContent = `${Math.round(data.main.temp)}°`;
-    document.getElementById("condition").textContent = `${data.weather[0].description} - Feels like ${Math.round(data.main.feels_like)}°`;
+    document.getElementById("condition").textContent = `${data.weather[0].main} - Feels like ${Math.round(data.main.feels_like)}°`;
     document.getElementById("highlow").textContent = `High: ${Math.round(data.main.temp_max)}° / Low: ${Math.round(data.main.temp_min)}°`;
 });
 
@@ -31,7 +32,7 @@ getJSON(forecastURL, function (data) {
     const hourlyTable = document.getElementById("hourly-table");
     const dailyTable = document.getElementById("daily-table");
 
-    // Show next 5 hourly entries
+    // Show next 5 hour entries
     data.list.slice(0, 5).forEach(item => {
         const date = new Date(item.dt * 1000);
         const time = date.toLocaleTimeString([], { hour: "numeric" });
@@ -45,7 +46,7 @@ getJSON(forecastURL, function (data) {
         hourlyTable.innerHTML += row;
     });
 
-    // Group by day for daily high/low
+    // Daily Table - Group by day
     const daily = {};
     data.list.forEach(item => {
         const day = new Date(item.dt * 1000).toLocaleDateString([], { weekday: "short" });
@@ -60,5 +61,32 @@ getJSON(forecastURL, function (data) {
     Object.keys(daily).slice(0, 5).forEach(day => {
         const row = `<tr><td>${day}</td><td>${Math.round(daily[day].high)}° / ${Math.round(daily[day].low)}°</td></tr>`;
         dailyTable.innerHTML += row;
+    });
+
+});
+
+
+// Alerts Box - National Weather Service API
+getJSON(alertsURL, function (data) {
+    const alertBox = document.getElementById("alerts-content");
+    alertBox.innerHTML = "";
+
+    if (!data.features || data.features.length === 0) {
+        alertBox.innerHTML = "<p>No active alerts for this area.</p>";
+        return;
+    }
+
+    data.features.forEach(alert => {
+        const props = alert.properties;
+        const alertHTML = `
+            <div class="alert">
+                <h4>${props.event}</h4>
+                <p><strong>Status:</strong> ${props.status}</p>
+                <p><strong>Severity:</strong> ${props.severity}</p>
+                <p><strong>Area:</strong> ${props.areaDesc}</p>
+                <p>${props.description || ""}</p>
+            </div>
+        `;
+        alertBox.innerHTML += alertHTML;
     });
 });
