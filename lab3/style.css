@@ -19,11 +19,9 @@ body {
 .current-weather {
     width: 100%;
     padding: 20px;
-    /* background: white; */
     margin-top: 10px;
     text-align: center;
     font-size: 18px;
-    /* box-shadow: 0 2px 4px rgba(0,0,0,0.2); */
 }
 
 .current-weather h2 {
