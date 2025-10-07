@@ -6,7 +6,7 @@ const currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${city},${
 const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${apiKey}&units=imperial`;
 const alertsURL = "https://api.weather.gov/alerts/active?point=42.73,-73.69";
 
-// Make an AJAX GET request
+// GET request
 function getJSON(url, callback) {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -25,6 +25,20 @@ getJSON(currentURL, function (data) {
     document.getElementById("temperature").textContent = `${Math.round(data.main.temp)}°`;
     document.getElementById("condition").textContent = `${data.weather[0].main} - Feels like ${Math.round(data.main.feels_like)}°`;
     document.getElementById("highlow").textContent = `High: ${Math.round(data.main.temp_max)}° / Low: ${Math.round(data.main.temp_min)}°`;
+
+    // Change background color based on weather condition
+    const condition = data.weather[0].main.toLowerCase();
+    const body = document.body;
+
+    if (condition.includes("rain")) {
+        body.style.backgroundColor = "#e6f3ffff";
+    } else if (condition.includes("clear")) {
+        body.style.backgroundColor = "#fffce1ff";
+    } else if (condition.includes("cloud")) {
+        body.style.backgroundColor = "#c4c4c4ff";
+    } else {
+        body.style.backgroundColor = "#f7f7f7";
+    }
 });
 
 // Forecast
