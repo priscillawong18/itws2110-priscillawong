@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+    color: #fff;
+}
+
+.weather-app {
+    width: 90%;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.city-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.city-input::placeholder {
+    color: #ccc;
+}
+
+/* --- MODIFIED SECTION --- */
+.search-btn {
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    /* Removed fixed width and height */
+    /* Added padding to create space around the text */
+    padding: 12px 25px;
+    /* Changed border-radius to create an oval/pill shape */
+    border-radius: 30px;
+    font-size: 16px; /* Adjusted font size to match input */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Added a hover transition */
+}
+
+.search-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+/* --- END MODIFIED SECTION --- */
+
+
+.weather-card {
+    display: none; /* Initially hidden */
+}
+
+.weather-icon {
+    width: 150px;
+    margin-top: 10px;
+}
+
+.temp {
+    font-size: 70px;
+    font-weight: 500;
+}
+
+.city {
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.description {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.detail-item {
+    text-align: center;
+}
+
+.detail-label {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.humidity, .wind {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.error-message {
+    text-align: left;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #ffbaba;
+    display: none; /* Initially hidden */
+}
