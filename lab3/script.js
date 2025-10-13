@@ -1,4 +1,4 @@
-const apiKey = "cbd49bc6ee5d2b6eb33c1b6aa0fc0375";
+const apiKey = "";
 
 // GET request
 function getJSON(url, callback) {
@@ -120,3 +120,4 @@ function success(position) {
 function error() {
     alert("Unable to retrieve your location. Please enable location access and refresh the page.");
 }
+

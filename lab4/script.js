@@ -5,8 +5,8 @@ const weatherCard = document.querySelector(".weather-card");
 const errorMessage = document.querySelector(".error-message");
 
 // API Keys and URLs
-const weatherApiKey = "cbd49bc6ee5d2b6eb33c1b6aa0fc0375"; // ⚠️ Don't forget to add your key
-const unsplashApiKey = "wUg1Lh99Xxd-Y17gshDNpFL-hZK_LD-gZYucFqpXcII";    // ⚠️ Don't forget to add your key
+const weatherApiKey = ""; // ⚠️ Don't forget to add your key
+const unsplashApiKey = "";    // ⚠️ Don't forget to add your key
 
 const unsplashApiUrl = "https://api.unsplash.com/search/photos?query=";
 
