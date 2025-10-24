@@ -1,0 +1,40 @@
+{
+  "menu": [
+    {
+      "name": "Cheeseburger",
+      "description": "Melted cheese on top of the meat patty with fresh lettuce, tomato, and pickles in a bun.",
+      "category": "non-vegetarian",
+      "cuisine": "American",
+      "image": "resources/img/cheeseburger.jpg",
+      "ingredients": ["ground beef", "cheese", "bun", "lettuce", "tomato", "pickles", "onion", "ketchup", "salt", "pepper"],
+      "price": 8.99
+    },
+    {
+      "name": "Eggplant Parmesan",
+      "description": "Layers of pan-fried or baked eggplant, tomato sauce, and melted mozzarella and parmesan cheeses.",
+      "category": "vegetarian",
+      "cuisine": "Italian",
+      "image": "resources/img/eggplantparmesan.jpg",
+      "ingredients": ["eggplant", "marinara sauce", "mozzarella cheese", "parmesan cheese", "eggs", "breadcrumbs", "olive oil", "flour"],
+      "price": 12.99
+    },
+    {
+      "name": "Lentil Soup",
+      "description": "Protein-rich dish made primarily with lentils and a flavorful broth, with vegetables like carrots, celery, and onions",
+      "category": "vegan",
+      "cuisine": "Turkish",
+      "image": "resources/img/lentilsoup.jpg",
+      "ingredients": ["lentils", "carrots", "celery", "onions", "vegetable broth", "garlic", "bay leaves"],
+      "price": 7.99
+    },
+    {
+      "name": "Tiramisu",
+      "description": "Layers of ladyfingers dipped in coffee, alternating with a whipped mixture of mascarpone cheese, eggs, and sugar, and finished with a dusting of cocoa powder",
+      "category": "non-vegetarian",
+      "cuisine": "Italian",
+      "image": "resources/img/tiramisu.jpg",
+      "ingredients": ["mascarpone cheese", "ladyfingers", "expresso", "eggs", "sugar", "cocoa powder"],
+      "price": 6.99
+    }
+  ]
+}
