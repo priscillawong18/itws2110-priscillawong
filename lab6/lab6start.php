@@ -30,7 +30,38 @@ class Addition extends Operation {
 
 // Part 1 - Add subclasses for Subtraction, Multiplication and Division here
 
+// Subtraction
+class Subtraction extends Operation {
+  public function operate() {
+    return $this->operand_1 - $this->operand_2;
+  }
+  public function getEquation() {
+    return $this->operand_1 . ' - ' . $this->operand_2 . ' = ' . $this->operate();
+  }
+}
 
+// Multiplication
+class Multiplication extends Operation {
+  public function operate() {
+    return $this->operand_1 * $this->operand_2;
+  }
+  public function getEquation() {
+    return $this->operand_1 . ' * ' . $this->operand_2 . ' = ' . $this->operate();
+  }
+}
+
+// Division
+class Division extends Operation {
+  public function operate() {
+    if ($this->operand_2 == 0) {
+      throw new Exception('Division by zero error.');
+    }
+    return $this->operand_1 / $this->operand_2;
+  }
+  public function getEquation() {
+    return $this->operand_1 . ' / ' . $this->operand_2 . ' = ' . $this->operate();
+  }
+}
 
 // End Part 1
 
@@ -64,15 +95,27 @@ class Addition extends Operation {
 // The Add is done below.  Go ahead and finish the remiannig functions.  
 // Then tell me if there is a way to do this without the ifs
 
+/*
+You can do this without the ifs by using an array that maps button names to their class names.
+Loop through the array to check which button was pressed and dynamically instantiate the 
+matching class with the variable class names.
+*/
+
   try {
     if (isset($_POST['add']) && $_POST['add'] == 'Add') {
       $op = new Addition($o1, $o2);
     }
 // Put the code for Part 2 here  \/
 
-
-
-
+    elseif (isset($_POST['sub']) && $_POST['sub'] == 'Subtract') {
+      $op = new Subtraction($o1, $o2);
+    }
+    elseif (isset($_POST['mult']) && $_POST['mult'] == 'Multiply') {
+      $op = new Multiplication($o1, $o2);
+    }
+    elseif (isset($_POST['div']) && $_POST['div'] == 'Divide') {
+      $op = new Division($o1, $o2);
+    }
 
 // End of Part 2   /\
 
@@ -116,3 +159,4 @@ class Addition extends Operation {
   </form>
 </body>
 </html>
+
