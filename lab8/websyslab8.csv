@@ -1,0 +1,21 @@
+"crn","prefix","number","title","section","year"
+"35797","PHYS","1100","Physics I",NULL,NULL
+"37514","CSCI","1100","Introduction to Computer Science",NULL,NULL
+"37730","MATH","2010","Multivar Calculus & Matrix Algebra",NULL,NULL
+"73048","ITWS","2110","Web Systems Development",NULL,NULL
+"id","crn","rin","grade"
+"1","37514","662057099","94"
+"2","37730","662057098","88"
+"3","73048","662057097","91"
+"4","35797","662057096","85"
+"5","37730","662057099","82"
+"6","35797","662057098","79"
+"7","35797","662057097","89"
+"8","37514","662057096","94"
+"9","73048","662057099","87"
+"10","73048","662057098","92"
+"rin","rcsID","first_name","last_name","alias","phone","street","city","state","zip"
+"662057096","siongd","Dana","Siong Sin","dana","1231231234","4 College Ave","Troy","NY","12180"
+"662057097","spauln","Nicole","Spaulding","nicole","1231231233","3 College Ave","Troy","NY","12180"
+"662057098","sitc","Courteney","Sit","courteney","1231231232","2 College Ave","Troy","NY","12180"
+"662057099","wongp4","Priscilla","Wong","priscilla","1231231231","1 College Ave","Troy","NY","12180"
