@@ -42,27 +42,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <title>Login</title>
     <style>
-        body { font-family: monospace; margin: 100px; font-size: 20px;}
-        .error { color: red; font-weight: bold; }
+        body { 
+            font-family: monospace; 
+            margin: 0px; 
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100vw;
+        }
+        .error { 
+            color: red; 
+            font-weight: bold; 
+        }
+        .centered-container {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
+    <div class="centered-container">
+        <h2>Login</h2>
 
-    <h2>Login</h2>
+        <?php if (!empty($errorMessage)): ?>
+            <p class="error"><?php echo $errorMessage; ?></p>
+        <?php endif; ?>
 
-    <?php if (!empty($errorMessage)): ?>
-        <p class="error"><?php echo $errorMessage; ?></p>
-    <?php endif; ?>
+        <form class="login-form" action="login.php" method="POST">
+            <label for="username">Username:</label><br>
+            <input type="text" name="username" id="username" required><br><br>
 
-    <form action="login.php" method="POST">
-        <label for="username">Username:</label><br>
-        <input type="text" name="username" id="username" required><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" name="password" id="password" required><br><br>
 
-        <label for="password">Password:</label><br>
-        <input type="password" name="password" id="password" required><br><br>
-
-        <button type="submit">Log In</button>
-    </form>
+            <button type="submit">Log In</button>
+        </form>
+    </div>
 
 </body>
 </html>

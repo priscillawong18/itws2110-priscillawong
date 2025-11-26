@@ -44,32 +44,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Register</title>
     <style>
-        body { font-family: monospace; margin: 100px; font-size: 20px;}
-        /* .error { color: red; font-weight: bold; } */
-        /* .form-group { margin-bottom: 25px; } */
+        body { 
+            font-family: monospace; 
+            margin: 0px; 
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100vw;
+        }
+        .error { 
+            color: red; 
+            font-weight: bold; 
+        }
+        .centered-container {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
-    <h2>Register</h2>
-    <p style="color:red"><?php echo $message; ?></p>
+    <div class="centered-container">
+        <h2>Register</h2>
+        <p style="color:red"><?php echo $message; ?></p>
 
-    <form method="post">
-        <label for="firstName">First Name:</label><br>
-        <input type="text" id="firstName" name="firstName" required><br><br>
+        <form method="post">
+            <label for="firstName">First Name:</label><br>
+            <input type="text" id="firstName" name="firstName" required><br><br>
 
-        <label for="lastName">Last Name:</label><br>
-        <input type="text" id="lastName" name="lastName" required><br><br>
+            <label for="lastName">Last Name:</label><br>
+            <input type="text" id="lastName" name="lastName" required><br><br>
 
-        <label for="nickName">Nickname:</label><br>
-        <input type="text" id="nickName" name="nickName" required><br><br>
+            <label for="nickName">Nickname:</label><br>
+            <input type="text" id="nickName" name="nickName" required><br><br>
 
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" required><br><br>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
 
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
 
-        <input type="submit" value="Register">
-    </form>
+            <input type="submit" value="Register">
+        </form>
+    </div>
 </body>
 </html>
