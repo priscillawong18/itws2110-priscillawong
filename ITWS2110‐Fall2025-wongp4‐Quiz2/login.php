@@ -6,6 +6,9 @@ $errorMessage = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    $inputUser = $_POST['username']; 
+    $inputPass = $_POST['password'];
+
     // Check if the user exists in the database
     $sql = "SELECT * FROM users WHERE username = ?";
     $stmt = $pdo->prepare($sql);
@@ -16,16 +19,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Go to register.php if user does not exist
         header("Location: register.php");
         exit();
-    } else {
-        // password_verify checks the plain password against the hash in the DB
-        if (password_verify($inputPass, $user['passwordHash'])) {
+    } 
+    else {
+        if (password_verify($inputPass, $user['password_hash'])) {
             // If user exists and password is correct, go to index.php
             $_SESSION['user_id'] = $user['userId'];
             $_SESSION['nickName'] = $user['nickName'];
             header("Location: index.php");
             exit();
-        } else {
-            // Wrong password error
+        } 
+        else {
+            // Wrong password
             $errorMessage = "Incorrect password. Please try again.";
         }
     }
@@ -40,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style>
         body { font-family: monospace; margin: 100px; font-size: 20px;}
         .error { color: red; font-weight: bold; }
-        .form-group { margin-bottom: 25px; }
     </style>
 </head>
 <body>
@@ -52,15 +55,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php endif; ?>
 
     <form action="login.php" method="POST">
-        <div class="form-group">
-            <label for="username">Username:</label><br>
-            <input type="text" name="username" id="username" required>
-        </div>
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" id="username" required><br><br>
 
-        <div class="form-group">
-            <label for="password">Password:</label><br>
-            <input type="password" name="password" id="password" required>
-        </div>
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" id="password" required><br><br>
 
         <button type="submit">Log In</button>
     </form>
