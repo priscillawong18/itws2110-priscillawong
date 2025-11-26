@@ -1,25 +1,78 @@
-CREATE DATABASE IF NOT EXISTS `ITWS2110-Fall2025-wongp4-Quiz2` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `ITWS2110-Fall2025-wongp4-Quiz2`;
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 26, 2025 at 10:37 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
-CREATE TABLE IF NOT EXISTS users (
-    userId INT AUTO_INCREMENT PRIMARY KEY,
-    firstName VARCHAR(100) NOT NULL,
-    lastName VARCHAR(100) NOT NULL,
-    nickName VARCHAR(100),
-    username VARCHAR(100) NOT NULL UNIQUE,
-    password_hash VARCHAR(255) NOT NULL
-) ENGINE=InnoDB;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-CREATE TABLE IF NOT EXISTS projects (
-    projectId INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL UNIQUE,
-    description TEXT
-) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS projectMembership (
-    projectId INT NOT NULL,
-    memberId INT NOT NULL,
-    PRIMARY KEY (projectId, memberId),
-    FOREIGN KEY (projectId) REFERENCES projects(projectId) ON DELETE CASCADE,
-    FOREIGN KEY (memberId) REFERENCES users(userId) ON DELETE CASCADE
-) ENGINE=InnoDB;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `itws2110-fall2025-wongp4-quiz2`
+--
+
+--
+-- Dumping data for table `projectmembership`
+--
+
+INSERT INTO `projectmembership` (`projectId`, `memberId`) VALUES
+(1, 14),
+(1, 16),
+(1, 19),
+(1, 21),
+(2, 17),
+(2, 22),
+(2, 23),
+(3, 13),
+(3, 20),
+(3, 24),
+(4, 17),
+(4, 18),
+(4, 20),
+(5, 14),
+(5, 19),
+(5, 22);
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`projectId`, `name`, `description`) VALUES
+(1, 'Project Volunteer', 'Volunteering for the community'),
+(2, 'Test', 'test'),
+(3, 'House Construction', 'Building a house'),
+(4, 'Mural', 'Paint a mural'),
+(5, 'New project', 'new project idea');
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userId`, `firstName`, `lastName`, `nickName`, `username`, `password_hash`) VALUES
+(13, 'Priscilla', 'Wong', 'Pris', 'wongp4', '$2y$10$RqpzW63h/pYdCBJn/8wjEujqFroukLCza2PXHoYMQDMBcKkf5SywW'),
+(14, 'John', 'Doe', 'John', 'jdoe', '$2y$10$hV.V0BydBtmfKAEHoX6Y3uiJ19LpoZoRlsx7SR0a8Q8.cTkm7/B/u'),
+(15, 'Jane', 'Smith', 'Jane', 'jsmith', '$2y$10$qmiTsQV9aQjsTY/EvcVI5eN9CrZj2.op/XkbJZ2cDOhfSj1aSwCmG'),
+(16, 'Dave', 'John', 'Dav', 'davej', '$2y$10$25Z5P2MDLO1es0jDgkKdfOrDNgYOsFaIACOJW81vdENzop4ziL4mS'),
+(17, 'Shawn', 'Mendes', 'Shawn', 'shawnm', '$2y$10$yN91PvogcdD2EjiXfFUGUuxCBWvL8G4c9dicGHBCpZnOYaM/JRUfy'),
+(18, 'Charlie', 'Brown', 'Char', 'charlieb', '$2y$10$/0ZJm1wdlIUgO7sttMMcRuHB4IeNaAkrjKmx7OtnHhprxbdXnTIfK'),
+(19, 'Jane', 'Fisher', 'Jane', 'jfisher', '$2y$10$XRs9aBUPwen/9pvbfFjQZOyvA542kpztO3Tbm4pY8V2YAIeaIWIEm'),
+(20, 'Spongebob', 'Squarepants', 'Spongey', 'spongebob', '$2y$10$MGZl5cifx2WdS0wFSPJC7u28r4K3oAM5.KzUQxuh61M.CKjJ/KLCK'),
+(21, 'Bob', 'Oven', 'Bob', 'boven', '$2y$10$LW43wPMwz8G3IPx2deW6mO93yyHUgUe9SW2/COAGosRXI.M3/FBae'),
+(22, 'Miley', 'Cyrus', 'miley', 'mcyrus', '$2y$10$NGzwq1wd6Y43DjM49yF3BuBRGHNP9M4RrLBWr/vUCbV3cbglBqpnq'),
+(23, 'Tom', 'Holland', 'Tommy', 'tomh', '$2y$10$wR9XJZOIP9tzgtN/PqxKdOVz4PXl1PMwFOVH3LtfibtQH.uhPxLq.'),
+(24, 'Steve', 'Jobs', 'steve', 'stejob', '$2y$10$d6XoU6ITGJfb.T8MA.BoSOyj0csOEBQ2JitW9Cc2HDe3vpguCThye');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
