@@ -23,3 +23,9 @@ The votes table would be a junction table between users and projects. It would h
 3.4.3. How could you add functionality to prevent users from submitting a vote to their own project?
 
 To prevent users from submitting a vote to their own project, I would add a logic check in the PHP code before processing the vote. When the user clicks "Vote", the script would check the user and the members of the project.
+
+Test Login:
+
+Username: jdoe
+
+Password: 1234
